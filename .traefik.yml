@@ -1,5 +1,6 @@
 displayName: Block Multipart
 type: middleware
 import: github.com/haakco/traefik-plugin-block-multipart
+basePkg: blockmultipart
 summary: Temporarily reject multipart Content-Type headers with 403 without reading request bodies.
 testData: {}

@@ -9,6 +9,10 @@ Register as `blockmultipart` in Traefik's static plugin configuration, pinning a
 release and the SHA-256 of the archive served by the Traefik plugin registry.
 Traefik expects the hexadecimal digest without a `sha256:` prefix.
 
+For immediate deployment before the catalog's daily import, prod-infra mounts
+the versioned sources in an immutable ConfigMap and registers `localPlugins`.
+Terraform verifies each source file against its pinned SHA-256 before applying.
+
 Registration alone does not block traffic. The application owns creating and
 attaching a Middleware to selected customer ingresses:
 
